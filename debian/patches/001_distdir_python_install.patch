@@ -1,0 +1,13 @@
+diff -Nur -x '*.orig' -x '*~' flypdf-1.0/src/Makefile.am flypdf-1.0.new/src/Makefile.am
+--- flypdf-1.0/src/Makefile.am	2010-08-12 14:30:04.446725345 +0200
++++ flypdf-1.0.new/src/Makefile.am	2010-08-12 14:41:31.636720512 +0200
+@@ -16,7 +16,8 @@
+ 
+ if WITH_PYTHON
+ include /usr/share/python/python.mk
+-pythonSitePackagesdir = $(py_libdir_sh)
++pythonSitePackagesdir = $(call py_libdir,2.6)
++
+ 
+ pythonSitePackages_LTLIBRARIES = _flypdfmodule.la
+ pythonSitePackages_SCRIPTS = flypdf.py

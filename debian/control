@@ -1,0 +1,19 @@
+Source: flypdf
+Priority: optional
+Maintainer: Puria Nafisi Azizi (pna) <puria.nafisi@axant.it>
+Build-Depends: debhelper (>= 7), autotools-dev, cdbs, python-setuptools, file,
+ python2.6, locales, autoconf, libtool, gawk, swig, mono-mcs, python-dev,
+ zlib1g-dev, automake
+Standards-Version: 3.8.3
+Section: libs
+Homepage:http://sourceforge.net/projects/flypdf/
+
+Package: flypdf
+Section: libdevel
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Flypdf Library
+ FlyPDF is a shared object library (.so) which allows to generate PDF files 
+ without using any PDF library as dependency. You may use it for any kind of
+ usage and modify it to suit your needs.FlyPDF has other advantages: high level
+ functions. 

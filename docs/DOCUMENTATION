@@ -1,0 +1,69 @@
+** Documentazione PDFPP **
+
+- Interfaccia C++ -
+
+L'interfaccia della libreria è uguale a quella della libreria php fpdf, con la sola differenza riguardante i link.
+La libreria FPDF differenziava tra link interni ed interni in base al fatto che l'argomento della funzione Link fosse l'id del link interno (quindi valore numerico) o l'url del link esterno (quindi stringa). Non potendo portare questo comportamento in maniera efficace al wrapper C la funzione è stata divisa in ExternalLink e InternalLink le quali mimano il medesimo comportamento della funzione Link originale.
+Per le funzioni restanti, semantica, comportamento e sintassi sono le medesime.
+
+- Interfaccia Python -
+
+L'interfaccia python è in tutto e per tutto uguale a quella C++
+
+- Interfaccia C -
+
+L'interfaccia C prevede gli stessi metodi dell'interfaccia C++ nella forma: PDfpp_NomeMetodo.
+Eccezione a questo fa il metodo AddFont che richiederà il path del file .fds da utilizzare invece che l'istanza di un FontData.
+
+Rispetto alle versioni Python e C++ i metodi non hanno argomenti di default e sarà necessario specificarli tutti.
+Ogni metodo ritornerà un riferimento all'istanza della classe come in C++ e Python. Sarà necessario distruggere
+il riferiment con la funzione Pdfpp_destroyPdf quando non lo si usa più.
+
+
+- Estendibilità in C++ -
+
+La libreria è totalmente estendibile per mezzo dell'ereditarietà in C++ esattamente come la libreria originale. Ereditare dalla libreria darà anche accesso alle funzioni interne presenti nella libreria originale stessa. Queste funzioni sono facilmente riconoscibili perché inizianti con il carattere "_".
+
+Oltre alle funzioni presenti nella libreria FPDF vi sono alcune funzioni di utilità aggiuntive accessibili ereditanto dalla classe Pdf:
+
+- fval
+  Presente in vari formati è un wrapper attorno a sprintf che permette di passare rapidamente gli argomenti per ottenre 
+  una stringa c++ come risultato. E' sconsigliato usarla con stringhe di lunghezza non prefissata come argomenti a cusa 
+  del buffer limitato.
+
+- nval
+  Dato un qualsiasi valore numerico (int, double, float, short) viene restituita la stringa che lo rappresenta
+
+- vread
+  Legge da un file size bytes e li resistuisce in un vector di char
+
+- iread
+  Legge un intero da file e lo resistuisce
+
+- sread
+  Legge una stringa di lunghezza size dal file
+
+- lowerstr
+  Data una stringa ne ritorna l'equivalente lowercase
+
+- upperstr
+  Data una stringa ne ritorna l'equivalente uppercase
+
+- str_replace
+  Data la sorgente (str), cosa cercare in essa (what) e con cosa sostituirlo (replacement) sostituisce tutte le
+  occorrenze di what con replacement in str.
+
+- Estendibilità in Python -
+
+In python è possibile estendere la libreria ereditandovi come in C++, la differenza è che le funzionalità accessibili saranno solo quelle pubbliche. L'unico metodo interno utilizzabile sarà _out. E' però possibile effettuare l'overloading dei metodi header e footer.
+
+- Estendibilità in C -
+
+In C la libreria è estendibile unicamente usando la funzione Pdfpp__out e non vi è possibilità di sovrascrivere i metodi header e footer.
+
+- Utilizzo dei font esterni -
+
+Per poter includere font Type1 o TrueType nei documenti è necessario aver generato un file descrittivo del font.
+Questo file è generabile attraverso lo script do_makefont presente nella directory makefont.
+Il file generato avrà estensione .fds e racchiuderà la descrizione del font stesso.
+Questo file deve essere accessibile alla libreria assieme al file del font per poterlo caricare.

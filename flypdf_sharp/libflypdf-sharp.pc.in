@@ -1,0 +1,10 @@
+prefix=@prefix@
+exec_prefix=@exec_prefix@
+libdir=@libdir@
+includedir=@includedir@
+Libraries=@libdir@/flypdf-sharp/flypdf-sharp.dll
+
+Name: flypdf-sharp
+Description: flypdf-sharp - flypdf mono bindings
+Version: @VERSION@
+Libs: -r:@libdir@/flypdf-sharp/flypdf-sharp.dll

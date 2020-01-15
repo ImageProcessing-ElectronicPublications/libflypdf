@@ -1,0 +1,33 @@
+This work was packaged for Debian by:
+
+    Puria Nafisi Azizi <puria.nafisi@axant.it> on Tue, 03 Aug 2010 15:46:26 +0200
+
+It was downloaded from https://sourceforge.net/projects/flypdf/
+
+Upstream Author(s):
+    Written by Alessandro Molina <alessandro.molina@gmail.com>
+    Portions of code by Fabio Rotondo <fabio.rotondo@os3.it>
+    Gabriele Buscone <gabriele.buscone@os3.it>
+Copyright:
+
+    Copyright (C) 2006-2008 OS3 srl
+
+License:
+
+    <Put the license of the package here indented by 4 spaces>
+
+The Debian packaging is:
+
+    Copyright (C) 2010 Puria Nafisi Azizi <puria.nafisi@axant.it>
+
+# Please chose a license for your packaging work. If the program you package
+# uses a mainstream license, using the same license is the safest choice.
+# Please avoid to pick license terms that are more restrictive than the
+# packaged work, as it may make Debian's contributions unacceptable upstream.
+# If you just want it to be GPL version 3, leave the following lines in.
+
+and is licensed under the GPL version 3, 
+see `/usr/share/common-licenses/GPL-3'.
+
+# Please also look if there are files or directories which have a
+# different copyright/license attached and list them here.

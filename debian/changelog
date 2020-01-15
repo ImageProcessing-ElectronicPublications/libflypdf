@@ -1,0 +1,21 @@
+flypdf (1.0-0ubuntu3) lucid; urgency=low
+
+  * Added patch to install in dist-packages
+
+ -- Puria Nafisi Azizi (pna) <puria.nafisi@axant.it>  Thu, 12 Aug 2010 15:10:52 +0200
+
+flypdf (1.0-0ubuntu2) lucid; urgency=low
+
+  * Added python-support to solve importing errors
+
+ -- Puria Nafisi Azizi (pna) <puria.nafisi@axant.it>  Wed, 04 Aug 2010 17:42:52 +0200
+
+flypdf (1.0-2ubuntu) lucid; urgency=low
+
+  [ Puria Nafisi Azizi (pna) ]
+  * Initial release
+
+  [ Puria Nafisi Azizi ]
+  * added python-dev and zlib to dependencies as they were missing
+
+ -- Puria Nafisi Azizi (pna) <puria.nafisi@axant.it>  Wed, 04 Aug 2010 14:16:46 +0200
